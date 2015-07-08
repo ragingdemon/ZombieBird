@@ -1,25 +1,23 @@
 package com.kilobolt.gameworld;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.Rectangle;
+import com.kilobolt.gameobjects.Bird;
 
 public class GameWorld {
+
     private static final String CLASS_NAME = "GameWorld";
     
-    private Rectangle rect = new Rectangle(0, 0, 17, 12);
-    
-    public GameWorld() {
-    }
-    
-    public void update(float delta){
-        Gdx.app.log(CLASS_NAME, "update");
-        rect.x++;
-        if (rect.x > 137) {
-            rect.x = 0;
-        }
+    private Bird bird;
+
+    public GameWorld(int midPointY) {
+        bird = new Bird(33, midPointY - 5, 17, 12);
     }
 
-    public Rectangle getRect() {
-        return rect;
+    public void update(float delta) {
+        bird.update(delta);
+    }
+
+    public Bird getBird() {
+        return bird;
     }
 }

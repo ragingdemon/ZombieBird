@@ -8,13 +8,18 @@ import com.kilobolt.gameworld.GameWorld;
 public class GameScreen implements Screen {
 
     private static final String CLASS_NAME = "GameScreen";
-    
-    private GameWorld world;
-    private GameRenderer renderer;  
 
-    public GameScreen() {        
-        Gdx.app.log(CLASS_NAME, "Attached");
-        world = new GameWorld();
+    private GameWorld world;
+    private GameRenderer renderer;
+
+    public GameScreen() {
+        float screenWidth = Gdx.graphics.getWidth();
+        float screenHeight = Gdx.graphics.getHeight();
+        float gameWidth = 136;
+        float gameHeight = screenHeight / (screenWidth / gameWidth);
+
+        int midPointY = (int) (gameHeight / 2);
+        world = new GameWorld(midPointY);
         renderer = new GameRenderer(world);
     }
 
@@ -31,7 +36,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        
+
     }
 
     @Override
@@ -51,7 +56,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-        
+
     }
 
 }

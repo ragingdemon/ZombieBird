@@ -24,21 +24,5 @@ public class GameRenderer {
     
     public void render(){
         Gdx.app.log(CLASS_NAME, "render");
-         /*
-         * 1. We draw a black background. This prevents flickering.
-         */
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
-        //draw the fill rectangle
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setColor(87/255f, 109/255f, 120/255f, 1);        
-        shapeRenderer.rect(myWorld.getRect().x, myWorld.getRect().y, myWorld.getRect().width, myWorld.getRect().height);
-        shapeRenderer.end();
-        //draw rectangle's outline
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(1f, 109/255f, 120/255f, 1);
-        shapeRenderer.rect(myWorld.getRect().x, myWorld.getRect().y, myWorld.getRect().width, myWorld.getRect().height);
-        shapeRenderer.end();
     }
 }
