@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.kilobolt.gameworld.GameRenderer;
 import com.kilobolt.gameworld.GameWorld;
+import com.kilobolt.zbHelpers.InputHandler;
 
 public class GameScreen implements Screen {
 
@@ -21,6 +22,8 @@ public class GameScreen implements Screen {
         int midPointY = (int) (gameHeight / 2);
         world = new GameWorld(midPointY);
         renderer = new GameRenderer(world);
+        
+        Gdx.input.setInputProcessor(new InputHandler(world.getBird()));
     }
 
     @Override
