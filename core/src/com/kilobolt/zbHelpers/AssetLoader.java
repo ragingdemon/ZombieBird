@@ -14,7 +14,7 @@ public class AssetLoader {
     public static Animation birdAnimation;
     public static TextureRegion bird, birdDown, birdUp;
 
-    public static TextureRegion skullUp, SkullDown, bar;
+    public static TextureRegion skullUp, skullDown, bar;
 
     public static void load() {
         texture = new Texture(Gdx.files.internal("data/texture.png"));
@@ -40,8 +40,8 @@ public class AssetLoader {
         birdAnimation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
 
         skullUp = new TextureRegion(texture, 192, 0, 24, 14);
-        SkullDown = new TextureRegion(skullUp);
-        SkullDown.flip(false, true);
+        skullDown = new TextureRegion(skullUp);
+        skullDown.flip(false, true);
 
         bar = new TextureRegion(texture, 136, 16, 22, 3);
         bar.flip(false, true);
