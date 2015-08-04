@@ -32,6 +32,10 @@ public class Scrollable {
         isScrolledLeft = false;
     }
 
+    public void stop() {
+        velocity.x = 0;
+    }
+
     //Getters for intance variables
     public boolean isScrolledLeft() {
         return isScrolledLeft;
